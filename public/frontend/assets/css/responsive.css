@@ -1,0 +1,165 @@
+@media only screen and (max-width: 1200px){
+	.header-left li span{padding-right: 2px;}
+	.header-left li{
+		font-size: 14px;
+		padding-right: 10px;
+	}
+	.fw3 li {width: 70px;}
+	.rp-txt p {font-size: 10px;}
+	.c-txt p { max-width: 300px;}
+	.se-txt{padding:30px 25px 35px;}
+	.se-title{ margin: 10px 0;}
+	.abox-txt {padding: 20px 15px;}
+	.a-ab-icon{margin-bottom:15px;}
+}
+
+@media only screen and (max-width: 992px){
+	.ser-img,
+	.ser-box,
+	.count-box,
+	.shop-box,
+	.blog-box,
+	.f-widget {margin-bottom: 50px;}
+	.se-title {margin: 15px 0;}
+	.abtext,
+	.abtxt{max-width: 450px; margin: 0 auto;}
+	.ser-img {max-width: 450px; margin: 0 auto;
+    margin-bottom: 50px;}
+	#counter,
+	#shop,
+	#blog,
+	#footer{padding: 95px 0 45px;}
+	.wsmain img{max-width: 80%;}
+	.wsmenu-list>li {font-size: 14px;}
+	.wsmenu-list>li>a{padding: 32px 12px;}
+	.wsmenu-list li a .arrow:after {
+    content: "";right: 0;top: 42px;}
+	.halfmenu {width: 55%;}
+	.bp-box h2 {font-size: 20px;}
+	.bp-box ul.tag li{padding:0}
+	.bp-box ul.text-right li{padding-left:10px}
+	form.search1 {margin: 0;}
+	ul.rp li img { width: auto;float: none;
+    margin-bottom: 8px;}
+	.rp-txt{display:block;padding-left:0;}
+	ul.rp {text-align: center;}
+	.abox {padding: 30px;}
+	.abox i {float: none;margin-bottom: 15px;
+    line-height: 40px;}
+	.o-txt h3{font-size:16px;}
+	.co-txt {float: initial;}
+	.se-txt {padding: 50px 35px 35px;}
+	.c-txt {display: table;padding-left: 0;
+    margin-top: 0;}
+	#accordion .card-block { padding: 1rem;}
+	.testi-box p i:nth-child(2){right:40%}
+	.abox-txt {padding:33px;}
+	.a-ab-icon{margin-bottom:25px;}
+	.se-txt{padding:45px 35px}
+	.fw3 li {width: 85px;}
+}
+@media only screen and (max-width: 780px){
+	.animated-arrow.hag,
+	.smallogo.hag {top: 0;}
+	.wsmain.h-ag {top: 65px;}
+}
+@media only screen and (max-width: 768px){
+	ul.header-right.text-right {
+		text-align: center!important;
+	}
+	ul.header-left {
+		text-align: center;
+		padding-bottom: 10px;
+	}
+	#ab-slide{margin-top:130px;}
+	.abox,
+	.blog-box{ max-width: 400px;margin:0 auto;margin-bottom: 50px;}
+	.o-box,
+	.rl-box,
+	ul.contact-txt {margin-bottom: 50px;}
+	.accordion,
+	.sidebar{padding-left: 0px;margin-top: 50px;}
+	ul.rp li {width: 50%;float: left;
+    display: inline-block;}
+	ul.rp {position: relative;overflow: hidden;}
+	.sw-box {text-align: center;}
+	.ms-sizer,
+	.ms-item--width4 {width: 50%; }
+	.f-widget{max-width: 300px;margin: 0 auto;
+    margin-bottom: 50px;}
+	.shop-box,
+	.ser-box,
+	.se-box,
+	.a-ab-box {max-width: 351px;margin: 0 auto;
+    margin-bottom: 30px;}
+	.co-txt {float: left;margin-bottom: 30px;}
+	.testi-box p i:nth-child(2){right:14%}
+	.se-txt {padding: 40px 35px;}
+	#comment-1 ol.children { padding-left: 50px;}
+	#comment-1 ol.children:nth-child(3) {
+		padding-left: 100px;}
+}
+
+@media only screen and (max-width: 767px){
+	#header {height: 80px;padding: 10px 0;}
+	.abox-txt {padding: 40px 30px;}
+	.animated-arrow,
+	.smallogo{top: 80px;}
+}
+@media only screen and (max-width: 640px){
+	#header{height: 45px;}
+	ul.header-right{display:none;}
+	.animated-arrow,
+	.smallogo{top: 45px;}
+	.wsmain{top:95px}
+}
+
+@media only screen and (max-width: 576px){
+	ul.tag.text-right{padding-top:20px;
+		text-align: left!important;}
+	.testi-box p i:nth-child(2) {
+    right: -1%;top: 36px;}
+	.txt-box { padding: 0 30px;
+    overflow: hidden;height: 50px;
+    margin-bottom: 30px;}
+}
+@media only screen and (max-width: 500px){
+	.tparrows{display:none;}
+	#header{display:none}
+	.animated-arrow,
+	.smallogo{top: 0px;}
+	.wsmain{top:40px}
+	#ab-slide {margin-top: 50px;}
+	.ms-sizer, .ms-item--width4 { width: 100%;}
+	.title h1,
+	.title.tb h1 {font-size: 32px;}
+	#ab-slide h1{font-size:36px;}
+	.admin-img {float: none;
+    margin-bottom: 20px;}
+	.admin-txt{padding:0;}
+	#comment-1 ol.children {padding-left: 20px;}
+	#comment-1 ol.children:nth-child(3) {
+    padding-left: 40px;}
+}
+@media only screen and (max-width: 400px){
+	.shop-box, .ser-box, .se-box, .a-ab-box {
+		max-width: 305px;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+	.title h1, .title.tb h1{font-size: 26px;}
+	#ab-slide h1 {font-size: 30px;}
+	.vision li .a-ab-icon {
+		float: none;margin: 0;margin-right: 0;
+		margin-bottom: 20px;}
+	.se-title {margin: 10px 0;}
+	.se-txt { padding: 28px 25px;}
+	.a-ab-icon { margin-bottom: 15px;}
+	.abox-txt {padding: 25px;}
+	.testi-box p{font-size:15px;}
+	.bp-box ul.text-right {
+    text-align: left!important;}
+	.bp-box .ms-btn {float:none;}
+	ul.rp li { width: auto;float: none;
+    display: block;}
+}
