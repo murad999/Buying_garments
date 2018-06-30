@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Session;
+use App\Category;
+
 class CategoriesController extends Controller
 {
     /**
@@ -13,7 +16,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return view('backend.categories.index');
+        return view('backend.categories.index')->with('categories',Category::paginate(5));
     }
 
     /**
@@ -34,7 +37,25 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+
+            'categoryName'=>'required|max:40',
+        ]);
+
+        $categoryName= $request->categoryName;
+
+        $category = Category::create([
+
+            'categoryName'=>$request->categoryName,
+            'uqid'=>uniqid(),
+            'status'=>1,
+ 
+        ]);
+
+        
+
+        Session::flash('success','Your Category was successfully save!');
+        return redirect()->back();
     }
 
     /**
@@ -54,9 +75,11 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($uqid)
     {
-        //
+        //$cat=Category::find($uqid);
+
+        //return vieiw('backend.categories.index')->with('cat',$cat);
     }
 
     /**
@@ -66,9 +89,29 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        //dd(request()->all());
+
+        $category=Category::findOrFail($request->cid);
+
+        //dd($category);
+
+        // $this->validate($request,[
+
+        //     'categoryName'=>'required|max:40',
+        // ]);
+
+        //$cat=Category::find($uqid);
+
+        $category->update($request->all());
+         //$category->categoryName=$request->categoryName;
+
+          //$category->save();
+
+        Session::flash('success','Your Category was successfully Updated!');
+        return redirect()->back();
+
     }
 
     /**
@@ -77,8 +120,13 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        //dd($request->all());
+        $category=Category::findOrFail($request->cid);
+        $category->delete();
+        Session::flash('success','Your Category was successfully Deleted!');
+        return redirect()->back();
+
     }
 }

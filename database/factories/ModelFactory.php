@@ -22,3 +22,13 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Category::class, function (Faker\Generator $faker) {
+
+
+    return [
+        'categoryName' => $faker->sentence(2),
+        'status' => 1,
+        'uqid'=>uniqid(),
+    ];
+});

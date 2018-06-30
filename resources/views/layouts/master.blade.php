@@ -20,11 +20,14 @@
     <!-- Custom CSS -->
     <link href="{{asset('backend/dist/css/sb-admin-2.css')}}" rel="stylesheet">
 
+    <link href="{{asset('backend/dist/css/toastr.min.css')}}" rel="stylesheet" type="text/css">
+
     <!-- Morris Charts CSS -->
     <link href="{{asset('backend/vendor/morrisjs/morris.css')}}" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="{{asset('backend/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -298,9 +301,6 @@
                             <a href="#"><i class="fa fa-product-hunt fa-fw"></i> Category<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{route('products.add')}}">Add Ca</a>
-                                </li>
-                                <li>
                                     <a href="{{route('categories')}}">All Categories</a>
                                 </li>
                             </ul>
@@ -405,6 +405,8 @@
     <!-- jQuery -->
     <script src="{{asset('backend/vendor/jquery/jquery.min.js')}}"></script>
 
+    
+
     <!-- Bootstrap Core JavaScript -->
     <script src="{{asset('backend/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 
@@ -418,6 +420,18 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{{asset('backend/dist/js/sb-admin-2.js')}}"></script>
+
+    <script src="{{ asset('backend/dist/js/toastr.min.js') }}"></script>
+
+
+    <script type="text/javascript">
+        
+        @if(Session::has('success'))
+            toastr.success("{{Session::get('success')}}")
+        @endif
+    </script>
+
+    @yield('customJs')
 
 </body>
 
