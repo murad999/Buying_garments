@@ -16,7 +16,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return view('backend.categories.index')->with('categories',Category::paginate(5));
+        return view('backend.categories.index')->with('categories',Category::orderBy('id','desc')->paginate(5));
     }
 
     /**
@@ -37,6 +37,8 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
+
+        //dd($request->all());
         $this->validate($request,[
 
             'categoryName'=>'required|max:40',
@@ -52,10 +54,10 @@ class CategoriesController extends Controller
  
         ]);
 
-        
+        //dd($category);
 
         Session::flash('success','Your Category was successfully save!');
-        return redirect()->back();
+        return redirect()->route('categories');
     }
 
     /**
@@ -75,7 +77,7 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($uqid)
+    public function edit($id)
     {
         //$cat=Category::find($uqid);
 
@@ -122,7 +124,7 @@ class CategoriesController extends Controller
      */
     public function destroy(Request $request)
     {
-        //dd($request->all());
+        dd($request->all());
         $category=Category::findOrFail($request->cid);
         $category->delete();
         Session::flash('success','Your Category was successfully Deleted!');

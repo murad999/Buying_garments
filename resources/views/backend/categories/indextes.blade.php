@@ -2,25 +2,17 @@
 
 @section('content')
 
- <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Product Section</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
-    <form action="" method="POST" accept-charset="utf-8">
-      
-    </form>
-    <form action="{{route('categories.add')}}" method="POST" accept-charset="utf-8">
-        <div class="form-group input-group">
-            <span class="input-group-addon"><i class="fa fa-paper-plane fa-fw"></i></span>
-            <input type="text" class="form-control" name="categoryName" placeholder="Add New Categroy" required>
-        </div>                    
-    <input type="submit" class="btn btn-success" value="Save">
- </form>
-   {!! Form::open(['route' => 'products.add','method'=>'POST']) !!}
-        {{ Form::text('email', 'example@gmail.com')}}
+   {!! Form::open(['route' => 'categories.add','method'=>'POST']) !!}
+       <div class="form-group">
+        {{Form::label('category', 'categoryName')}}
+        {{Form::text('categoryName','',['class'=>'form-control','placeholder'=>'Enter Your category','required'=>'','maxlength'=>100])}}
+        </div> 
         {{Form::submit('Click Me!')}}
     {!! Form::close() !!}
     <div class="row">
@@ -42,7 +34,4 @@
         <!-- /.col-lg-8 -->    
     </div>
     <!-- /.row -->
-</div>
-<!-- /#page-wrapper -->
-
 @stop

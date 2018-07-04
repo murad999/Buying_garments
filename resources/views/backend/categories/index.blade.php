@@ -2,7 +2,7 @@
 
 @section('content')
 
- <div id="page-wrapper">
+
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Category Section</h1>
@@ -18,7 +18,12 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-            <i class="fa fa-plus fa-fw"></i><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New Categroy</button>
+            <i class="fa fa-plus fa-fw"></i><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModaladd">Add New Category</button>
+            
+                {{-- {!! Form::open(['route' => 'products.add','method'=>'POST']) !!}
+                    {{ Form::text('email', 'example@gmail.com')}}
+                    {{Form::submit('Click Me!')}}
+                {!! Form::close() !!} --}}
         </div>
     </div><br/>
     <div class="row">
@@ -82,27 +87,36 @@
         <!-- /.col-lg-8 -->    
     </div>
     <!-- /.row -->
-</div>
-<!-- /#page-wrapper -->
 
- <!-- Modal Add -->
-          <div class="modal fade" id="myModal" role="dialog">
+
+
+<!-- Modal -->
+          <div class="modal fade" id="myModaladd" role="dialog">
             <div class="modal-dialog">
             
               <!-- Modal content-->
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Categroy Details</h4>
+                  <h4 class="modal-title">Product Details</h4>
                 </div>
                 <div class="modal-body">
                    <div class="row">
                         <div class="col-md-8">
-                            <form role="form" action="{{route('categories.store')}}" method="post">
+{{-- 
+                               {!! Form::open(['route' => 'products.add','method'=>'POST']) !!}
+                                    {{ Form::text('email', 'example@gmail.com')}}
+                                    {{Form::submit('Click Me!')}}
+                                {!! Form::close() !!} --}}
+                                <form action="" method="POST" accept-charset="utf-8">
+                                  
+                                  {{-- <input type="text" name=""> --}}
+                                </form>
+                            <form name="addform" action="{{route('categories.store')}}" method="POST">
                                 {{csrf_field()}}
                                 <div class="form-group input-group">
                                     <span class="input-group-addon"><i class="fa fa-paper-plane fa-fw"></i></span>
-                                    <input type="text" class="form-control" name="categoryName" placeholder="Add New Categroy" required>
+                                    <input type="text" class="form-control" name="categoryName" placeholder="Add New Product" required>
                                 </div>                    
                                 <button type="submit" class="btn btn-success">Save</button>
                             </form>
@@ -116,7 +130,6 @@
               
             </div>
           </div>
-
 
  <!-- Modal edit-->
           <div class="modal fade" id="myModaledit" role="dialog">
@@ -163,6 +176,10 @@
                 <p>Do you really want to delete these records? This process cannot be undone.</p>
                 <div class="row">
                         <div class="col-md-8">
+                          <form action="" method="POST" accept-charset="utf-8">
+                            
+                            <input type="text" name="">
+                          </form>
                             <form role="form" action="{{route('categories.destroy')}}" method="post">
                                 {{csrf_field()}}
                                 <div class="form-group input-group">
@@ -181,12 +198,25 @@
     </div>
 </div>
 
+
+</div>
+
 @stop
+
+
 
 @section('customJs')
 
 <script type="text/javascript">
-    
+    $('#myModaladd').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      // var cat_name = button.data('cat_name') 
+      // var cat_id = button.data('cat_id') 
+      var modal = $(this)
+      // modal.find('.modal-body #catName').val(cat_name)
+      // modal.find('.modal-body #catUid').val(cat_id)
+    })
+
     $('#myModaledit').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) 
       var cat_name = button.data('cat_name') 

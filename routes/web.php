@@ -60,7 +60,12 @@ Route::get('/categories',[
 	'as'=>'categories'
 
 ]);
+Route::get('/categories/add',[
 
+	'uses'=>'CategoriesController@index',
+	'as'=>'categories.add'
+
+]);
 Route::post('/categories/store',[
 
 	'uses'=>'CategoriesController@store',
@@ -81,7 +86,7 @@ Route::post('/categories/update',[
 	'as'=>'categories.update'
 
 ]);
-Route::post('/categories/destroy',[
+Route::post('/categories/destroy/{id}',[
 
 	'uses'=>'CategoriesController@destroy',
 	'as'=>'categories.destroy'

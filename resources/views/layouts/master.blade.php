@@ -397,7 +397,12 @@
             <!-- /.navbar-static-side -->
         </nav>
 
-@yield('content')
+        <div id="page-wrapper">
+            @yield('content')
+        </div>
+        <!-- /#page-wrapper -->
+
+
 
 </div>
     <!-- /#wrapper -->
