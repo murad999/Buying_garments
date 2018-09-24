@@ -2,7 +2,7 @@
 
 @section('content')
 
- <div id="page-wrapper">
+
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Product Section</h1>
@@ -28,9 +28,9 @@
                 <!-- /.panel-body -->
             </div>
             <!-- /.panel -->
-           
+
         </div>
-        <!-- /.col-lg-8 -->    
+        <!-- /.col-lg-8 -->
     </div>
     <!-- /.row -->
 </div>
@@ -39,7 +39,7 @@
 <!-- Modal -->
           <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
-            
+
               <!-- Modal content-->
               <div class="modal-content">
                 <div class="modal-header">
@@ -53,7 +53,7 @@
                                 <div class="form-group input-group">
                                     <span class="input-group-addon"><i class="fa fa-paper-plane fa-fw"></i></span>
                                     <input type="text" class="form-control" name="" placeholder="Add New Product" required>
-                                </div>                    
+                                </div>
                                 <button type="submit" class="btn btn-success">Save</button>
                             </form>
                         </div>
@@ -63,9 +63,9 @@
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
               </div>
-              
+
             </div>
-          </div>
+
 
 
 @stop

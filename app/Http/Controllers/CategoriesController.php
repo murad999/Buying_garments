@@ -51,7 +51,7 @@ class CategoriesController extends Controller
             'categoryName'=>$request->categoryName,
             'uqid'=>uniqid(),
             'status'=>1,
- 
+
         ]);
 
         //dd($category);
@@ -124,11 +124,11 @@ class CategoriesController extends Controller
      */
     public function destroy(Request $request)
     {
-        dd($request->all());
+      // dd($request->all());
         $category=Category::findOrFail($request->cid);
         $category->delete();
         Session::flash('success','Your Category was successfully Deleted!');
-        return redirect()->back();
+        return redirect()->route('categories');
 
     }
 }

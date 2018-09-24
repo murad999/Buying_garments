@@ -86,7 +86,7 @@ Route::post('/categories/update',[
 	'as'=>'categories.update'
 
 ]);
-Route::post('/categories/destroy/{id}',[
+Route::post('/categories/destroy',[
 
 	'uses'=>'CategoriesController@destroy',
 	'as'=>'categories.destroy'
